@@ -41,8 +41,8 @@
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             cursor: pointer;
             box-shadow: 0 2px 5px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06);
             display: flex;
@@ -226,7 +226,7 @@
             height: 24px;
             padding: 0 8px;
             border-radius: 6px;
-            font-size: 9px;
+            font-size: 12px;
             font-weight: 600;
             align-items: center;
             justify-content: center;
@@ -246,7 +246,7 @@
 
         .request-url {
             color: var(--text-primary);
-            font-size: 10px;
+            font-size: 12px;
             margin-right: 8px;
             white-space: nowrap;
             display: inline-block;
@@ -255,7 +255,7 @@
         .request-duration {
             flex-shrink: 0;
             color: var(--text-secondary);
-            font-size: 10px;
+            font-size: 12px;
             font-family: monospace;
             width: 70px;
             text-align: right;
