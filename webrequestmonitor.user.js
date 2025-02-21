@@ -1,5 +1,6 @@
 // ==UserScript==
 // @name         Web Request Monitor
+// @icon         🌍
 // @namespace    http://tampermonkey.net/
 // @version      0.1.0
 // @description  网页请求监视器
@@ -7,6 +8,8 @@
 // @match        *://*/*
 // @grant        GM_addStyle
 // @grant        GM_setClipboard
+// @updateURL    https://github.com/utopeadia/WebRequestMonitor/raw/refs/heads/main/webrequestmonitor.user.js
+// @downloadURL  https://github.com/utopeadia/WebRequestMonitor/raw/refs/heads/main/webrequestmonitor.user.js
 // ==/UserScript==
 
 (function () {
