@@ -48,7 +48,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 16px;
             transition: all 0.2s ease;
         }
 
@@ -112,7 +112,7 @@
             border-radius: 8px;
             background: var(--surface);
             color: var(--text-primary);
-            font-size: 14px;
+            font-size: 12px;
             cursor: pointer;
             transition: all 0.2s ease;
             outline: none;
@@ -141,7 +141,7 @@
             border-radius: 8px;
             background: var(--surface);
             color: var(--text-primary);
-            font-size: 14px;
+            font-size: 12px;
             transition: all 0.2s ease;
             outline: none;
         }
@@ -210,7 +210,7 @@
             height: 24px;
             padding: 0 8px;
             border-radius: 6px;
-            font-size: 11px;
+            font-size: 9px;
             font-weight: 600;
             align-items: center;
             justify-content: center;
@@ -230,7 +230,7 @@
 
         .request-url {
             color: var(--text-primary);
-            font-size: 13px;
+            font-size: 10px;
             max-width: 95%;
             margin-right: 8px;
             word-break: break-all;
@@ -239,7 +239,7 @@
         .request-duration {
             flex-shrink: 0;
             color: var(--text-secondary);
-            font-size: 12px;
+            font-size: 10px;
             font-family: monospace;
             min-width: 70px;
             text-align: right;
@@ -281,7 +281,7 @@
             background: rgba(0,0,0,0.9);
             color: white;
             border-radius: 8px;
-            font-size: 14px;
+            font-size: 12px;
             box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
             animation: slideIn 0.3s ease, fadeOut 0.3s ease 2s forwards;
         }
