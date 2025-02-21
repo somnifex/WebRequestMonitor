@@ -187,7 +187,7 @@
             transition: all 0.2s ease;
             cursor: pointer;
             white-space: nowrap;
-            min-width: 100%;
+            min-width: 85%;
         }
 
         .request-item:hover {
@@ -247,7 +247,7 @@
         .request-url {
             color: var(--text-primary);
             font-size: 14px;
-            margin-right: 2px;
+            margin-right: 4px;
             white-space: nowrap;
             display: inline-block;
         }
@@ -257,9 +257,9 @@
             color: var(--text-secondary);
             font-size: 14px;
             font-family: monospace;
-            width: 70px;
+            width: 50px;
             text-align: right;
-            padding-left: 2px;
+            padding-left: 6px;
             white-space: nowrap;
         }
 
