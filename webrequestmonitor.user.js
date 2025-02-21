@@ -187,6 +187,7 @@
             transition: all 0.2s ease;
             cursor: pointer;
             white-space: nowrap;
+            min-width: 100%;
         }
 
         .request-item:hover {
