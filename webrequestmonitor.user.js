@@ -276,6 +276,7 @@
             background: var(--surface);
             color: var(--text-primary);
             border: 1px solid var(--border);
+            font-size: 14px;
             padding: 8px;
             border-radius: 8px;
             cursor: pointer;
