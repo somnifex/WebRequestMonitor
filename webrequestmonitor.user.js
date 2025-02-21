@@ -178,7 +178,7 @@
 
         /* 请求项 */
         .request-item {
-            padding: 12px;
+            padding: 10px;
             margin: 4px 0;
             background: var(--surface);
             border-radius: 8px;
@@ -255,11 +255,11 @@
         .request-duration {
             flex-shrink: 0;
             color: var(--text-secondary);
-            font-size: 14px;
+            font-size: 12px;
             font-family: monospace;
-            width: 50px;
+            width: 48px;
             text-align: right;
-            padding-left: 6px;
+            padding-left: 4px;
             white-space: nowrap;
         }
 
