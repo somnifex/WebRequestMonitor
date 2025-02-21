@@ -2,7 +2,7 @@
 // @name         网页请求监视器
 // @icon         data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100' style='overflow: visible'%3E%3Ctext x='50%' y='60%' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E🌍%3C/text%3E%3C/svg%3E
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
+// @version      1.0.3
 // @description  Web Request Monitor
 // @author       Howie Wood
 // @match        *://*/*
@@ -186,6 +186,7 @@
             align-items: center;
             transition: all 0.2s ease;
             cursor: pointer;
+            white-space: nowrap;
         }
 
         .request-item:hover {
@@ -198,6 +199,7 @@
             align-items: center;
             min-width: 0;
             flex: 1;
+            overflow: hidden;
         }
 
         .request-type {
@@ -228,12 +230,9 @@
         .request-url {
             color: var(--text-primary);
             font-size: 13px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            flex-shrink: 1;
-            max-width: 90%;
+            max-width: 95%;
             margin-right: 8px;
+            word-break: break-all;
         }
 
         .request-duration {
@@ -243,6 +242,7 @@
             font-family: monospace;
             min-width: 70px;
             text-align: right;
+            padding-left: 10px;
         }
 
         .copy-group {
