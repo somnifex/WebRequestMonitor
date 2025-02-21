@@ -2,7 +2,7 @@
 // @name         Web Request Monitor
 // @icon         🌍
 // @namespace    http://tampermonkey.net/
-// @version      0.1.0
+// @version      0.1.1
 // @description  网页请求监视器
 // @author       Howie Wood
 // @match        *://*/*
