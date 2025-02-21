@@ -187,7 +187,7 @@
             transition: all 0.2s ease;
             cursor: pointer;
             white-space: nowrap;
-            min-width: 85%;
+            min-width: 70%;
         }
 
         .request-item:hover {
@@ -402,7 +402,7 @@
                 const startTime = Date.now();
 
                 this.addEventListener('load', () => {
-                    requestEntry.duration = `${(Date.now() - startTime).toFixed(1)}ms`;
+                    requestEntry.duration = `${(Date.now() - startTime).toFixed(1)}`;
                     renderList();
                 });
 
@@ -444,7 +444,7 @@
 
                 return originalFetch.apply(this, args)
                     .then(response => {
-                        requestEntry.duration = `${(Date.now() - startTime).toFixed(1)}ms`;
+                        requestEntry.duration = `${(Date.now() - startTime).toFixed(1)}`;
                         renderList();
                         return response;
                     })
