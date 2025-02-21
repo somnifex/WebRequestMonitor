@@ -83,7 +83,7 @@
 
         /* 请求列表 */
         #request-list {
-            max-height: calc(100vh - 360px);
+            max-height: calc(95vh - 360px);
             overflow: auto;
             scrollbar-width: thin;
             scrollbar-color: var(--primary-color) var(--surface);
