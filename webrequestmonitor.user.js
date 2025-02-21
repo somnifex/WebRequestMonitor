@@ -200,7 +200,23 @@
             align-items: center;
             min-width: 0;
             flex: 1;
-            overflow: hidden;
+            overflow-x: auto
+            overflow-y: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) var(--surface);
+        }
+        /* 添加横向滚动条样式 */
+        .request-info::-webkit-scrollbar {
+            height: 4px;
+        }
+        
+        .request-info::-webkit-scrollbar-track {
+            background: var(--surface);
+        }
+        
+        .request-info::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 2px;
         }
 
         .request-type {
@@ -231,9 +247,9 @@
         .request-url {
             color: var(--text-primary);
             font-size: 10px;
-            max-width: 95%;
             margin-right: 8px;
-            word-break: break-all;
+            white-space: nowrap;
+            display: inline-block;
         }
 
         .request-duration {
@@ -241,9 +257,10 @@
             color: var(--text-secondary);
             font-size: 10px;
             font-family: monospace;
-            min-width: 70px;
+            width: 70px;
             text-align: right;
             padding-left: 10px;
+            white-space: nowrap;
         }
 
         .copy-group {
