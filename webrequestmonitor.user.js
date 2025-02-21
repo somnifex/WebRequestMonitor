@@ -2,7 +2,7 @@
 // @name         网页请求监视器
 // @icon         data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100' style='overflow: visible'%3E%3Ctext x='50%' y='60%' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E🌍%3C/text%3E%3C/svg%3E
 // @namespace    http://tampermonkey.net/
-// @version      0.1.5
+// @version      0.1.6
 // @description  Web Request Monitor
 // @author       Howie Wood
 // @match        *://*/*
@@ -433,6 +433,32 @@
             updateRequests();
             panel.style.display = panel.style.display === 'block' ? 'none' : 'block';
             renderList();
+        });
+
+        let hideTimeout;
+        const resetHideTimeout = () => {
+            clearTimeout(hideTimeout);
+            hideTimeout = setTimeout(() => {
+                panel.style.display = 'none';
+            }, 3500);
+        };
+
+        panel.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+        });
+
+        panel.addEventListener('mouseleave', () => {
+            resetHideTimeout();
+        });
+
+        btn.addEventListener('mouseenter', () => {
+            clearTimeout(hideTimeout);
+        });
+
+        btn.addEventListener('mouseleave', () => {
+            if (panel.style.display === 'block') {
+                resetHideTimeout();
+            }
         });
 
         document.getElementById('type-filter').addEventListener('change', e => {
