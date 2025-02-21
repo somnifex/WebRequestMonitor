@@ -83,7 +83,7 @@
 
         /* 请求列表 */
         #request-list {
-            max-height: calc(90vh - 360px);
+            max-height: calc(100vh - 360px);
             overflow: auto;
             scrollbar-width: thin;
             scrollbar-color: var(--primary-color) var(--surface);
@@ -259,7 +259,7 @@
             font-family: monospace;
             width: 70px;
             text-align: right;
-            padding-left: 10px;
+            padding-left: 3px;
             white-space: nowrap;
         }
 
