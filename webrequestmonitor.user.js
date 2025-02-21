@@ -2,7 +2,7 @@
 // @name         网页请求监视器
 // @icon         data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100' style='overflow: visible'%3E%3Ctext x='50%' y='60%' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E🌍%3C/text%3E%3C/svg%3E
 // @namespace    http://tampermonkey.net/
-// @version      0.1.6
+// @version      0.1.7
 // @description  Web Request Monitor
 // @author       Howie Wood
 // @match        *://*/*
@@ -312,7 +312,8 @@
 
     function getDomain(url) {
         try {
-            return new URL(url).hostname;
+            const parsed = new URL(url, window.location.href);
+            return parsed.hostname;
         } catch {
             return url.split('/')[0] || '';
         }
@@ -346,13 +347,20 @@
         // 劫持 XHR
         const originalXHROpen = XMLHttpRequest.prototype.open;
         XMLHttpRequest.prototype.open = function (method, url) {
-            if (url && !uniqueUrls.has(url)) {
-                uniqueUrls.add(url);
+            let absoluteUrl;
+            try {
+                absoluteUrl = new URL(url, window.location.href).href;
+            } catch (e) {
+                absoluteUrl = url;
+            }
+            
+            if (absoluteUrl && !uniqueUrls.has(absoluteUrl)) {
+                uniqueUrls.add(absoluteUrl);
                 const requestEntry = {
-                    url,
+                    url: absoluteUrl,
                     type: 'xhr',
                     duration: 'Pending...',
-                    domain: getDomain(url)
+                    domain: getDomain(absoluteUrl)
                 };
                 requestData.push(requestEntry);
                 const startTime = Date.now();
@@ -373,14 +381,27 @@
         // 劫持 Fetch
         const originalFetch = window.fetch;
         window.fetch = function (...args) {
-            const url = args[0];
-            if (typeof url === 'string' && !uniqueUrls.has(url)) {
-                uniqueUrls.add(url);
+            let url;
+            if (args[0] instanceof Request) {
+                url = args[0].url;
+            } else {
+                url = args[0];
+            }
+        
+            let absoluteUrl;
+            try {
+                absoluteUrl = new URL(url, window.location.href).href;
+            } catch (e) {
+                absoluteUrl = url;
+            }
+        
+            if (typeof absoluteUrl === 'string' && !uniqueUrls.has(absoluteUrl)) {
+                uniqueUrls.add(absoluteUrl);
                 const requestEntry = {
-                    url,
+                    url: absoluteUrl,
                     type: 'fetch',
                     duration: 'Pending...',
-                    domain: getDomain(url)
+                    domain: getDomain(absoluteUrl)
                 };
                 requestData.push(requestEntry);
                 const startTime = Date.now();
