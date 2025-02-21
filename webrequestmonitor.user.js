@@ -2,7 +2,7 @@
 // @name         网页请求监视器
 // @icon         data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100' style='overflow: visible'%3E%3Ctext x='50%' y='60%' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E🌍%3C/text%3E%3C/svg%3E
 // @namespace    http://tampermonkey.net/
-// @version      0.1.7
+// @version      0.1.8
 // @description  Web Request Monitor
 // @author       Howie Wood
 // @match        *://*/*
@@ -155,7 +155,6 @@
             color: var(--text-secondary);
         }
 
-        /* 自定义滚动条 */
         #request-list::-webkit-scrollbar {
             width: 6px;
         }
@@ -180,6 +179,8 @@
             align-items: center;
             transition: all 0.2s ease;
             cursor: pointer;
+            overflow-x: auto;
+            overflow-y: hidden;
         }
 
         .request-item:hover {
@@ -188,21 +189,28 @@
         }
 
         .request-info {
-            flex: 1;
+            display: flex;
+            align-items: center;
             min-width: 0;
+            flex: 1;
         }
 
         .request-type {
-            display: inline-block;
+            display: inline-flex;
             width: 64px;
-            padding: 4px 8px;
+            min-width: 64px;
+            height: 24px;
+            padding: 0 8px;
             border-radius: 6px;
             font-size: 11px;
             font-weight: 600;
-            text-align: center;
+            align-items: center;
+            justify-content: center;
             text-transform: uppercase;
             color: white;
             margin-right: 12px;
+            flex-shrink: 0;
+            box-sizing: border-box;
             background: #94a3b8;
         }
 
@@ -216,11 +224,13 @@
             color: var(--text-primary);
             font-size: 13px;
             white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            /* 移除text-overflow */
+            flex-shrink: 0;
+            padding-right: 16px;
         }
 
         .request-duration {
+            flex-shrink: 0;
             color: var(--text-secondary);
             font-size: 12px;
             font-family: monospace;
