@@ -2,7 +2,7 @@
 // @name         网页请求监视器
 // @icon         data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100' style='overflow: visible'%3E%3Ctext x='50%' y='60%' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E🌍%3C/text%3E%3C/svg%3E
 // @namespace    http://tampermonkey.net/
-// @version      0.1.3
+// @version      0.1.4
 // @description  Web Request Monitor
 // @author       Howie Wood
 // @match        *://*/*
@@ -36,7 +36,7 @@
         #net-monitor-btn {
             position: fixed;
             bottom: 95px;
-            right: 18px;
+            right: 14px;
             z-index: 9999;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
@@ -76,7 +76,7 @@
 
         /* 请求列表 */
         #request-list {
-            max-height: calc(100vh - 360px); /* 修改为相对于视口的高度，减去其他元素的高度 */
+            max-height: calc(100vh - 360px)
             overflow-y: auto;
             scrollbar-width: thin;
             scrollbar-color: var(--primary-color) var(--surface);
@@ -85,10 +85,16 @@
         /* 控制组样式 */
         .control-group {
             display: flex;
+            flex-direction: column;
             gap: 8px;
             margin-bottom: 16px;
             padding-bottom: 16px;
             border-bottom: 1px solid var(--border);
+        }
+
+        .filter-row {
+            display: flex;
+            gap: 8px;
         }
 
         /* 下拉框样式 */
@@ -282,15 +288,17 @@
     panel.id = 'net-monitor-panel';
     panel.innerHTML = `
         <div class="control-group">
-            <select id="type-filter">
-                <option value="all">All Types</option>
-                <option value="script">Script</option>
-                <option value="img">Image</option>
-                <option value="xhr">XHR</option>
-                <option value="fetch">Fetch</option>
-                <option value="css">CSS</option>
-            </select>
-            <input id="domain-filter" type="text" placeholder="Filter domain">
+            <div class="filter-row">
+                <select id="type-filter">
+                    <option value="all">All Types</option>
+                    <option value="script">Script</option>
+                    <option value="img">Image</option>
+                    <option value="xhr">XHR</option>
+                    <option value="fetch">Fetch</option>
+                    <option value="css">CSS</option>
+                </select>
+                <input id="domain-filter" type="text" placeholder="Filter domain">
+            </div>
             <input id="search-box" type="text" placeholder="Search URL">
         </div>
         <div id="request-list"></div>
