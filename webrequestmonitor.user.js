@@ -246,8 +246,8 @@
 
         .request-url {
             color: var(--text-primary);
-            font-size: 12px;
-            margin-right: 8px;
+            font-size: 14px;
+            margin-right: 2px;
             white-space: nowrap;
             display: inline-block;
         }
@@ -255,11 +255,11 @@
         .request-duration {
             flex-shrink: 0;
             color: var(--text-secondary);
-            font-size: 12px;
+            font-size: 14px;
             font-family: monospace;
             width: 70px;
             text-align: right;
-            padding-left: 3px;
+            padding-left: 2px;
             white-space: nowrap;
         }
 
