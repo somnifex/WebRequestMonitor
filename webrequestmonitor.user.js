@@ -2,7 +2,7 @@
 // @name         网页请求监视器
 // @icon         data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100' style='overflow: visible'%3E%3Ctext x='50%' y='60%' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E🌍%3C/text%3E%3C/svg%3E
 // @namespace    http://tampermonkey.net/
-// @version      0.1.2
+// @version      0.1.3
 // @description  Web Request Monitor
 // @author       Howie Wood
 // @match        *://*/*
@@ -35,8 +35,8 @@
         /* 悬浮按钮 */
         #net-monitor-btn {
             position: fixed;
-            bottom: 90px;
-            right: 24px;
+            bottom: 95px;
+            right: 18px;
             z-index: 9999;
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
@@ -291,6 +291,7 @@
                 <option value="css">CSS</option>
             </select>
             <input id="domain-filter" type="text" placeholder="Filter domain">
+            <input id="search-box" type="text" placeholder="Search URL">
         </div>
         <div id="request-list"></div>
         <div class="copy-group">
