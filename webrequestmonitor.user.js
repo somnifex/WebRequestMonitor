@@ -62,7 +62,7 @@
             position: fixed;
             bottom: 150px;
             right: 16px;
-            width: 420px;
+            width: 440px;
             max-height: calc(100vh - 200px);
             background: var(--background);
             border: 1px solid var(--border);
