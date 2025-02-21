@@ -2,7 +2,7 @@
 // @name         网页请求监视器
 // @icon         data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100' style='overflow: visible'%3E%3Ctext x='50%' y='60%' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E🌍%3C/text%3E%3C/svg%3E
 // @namespace    http://tampermonkey.net/
-// @version      1.1.0
+// @version      1.1.1
 // @description  Web Request Monitor
 // @author       Howie Wood
 // @match        *://*/*
@@ -218,7 +218,7 @@
         }
         .request-type {
             display: inline-flex;
-            width: 64px;
+            width: 85px;
             min-width: 64px;
             height: 24px;
             padding: 0 8px;
