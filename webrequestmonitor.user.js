@@ -61,16 +61,16 @@
         #net-monitor-panel {
             position: fixed;
             bottom: 150px;
-            right: 24px;
-            width: 360px;
+            right: 16px;
+            width: 400px;
             max-height: calc(100vh - 200px);
             background: var(--background);
             border: 1px solid var(--border);
             border-radius: 12px;
-            padding: 16px;
+            padding: 8px;
             z-index: 9998;
             overflow: hidden;
-            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1), 0 10px 10px -5px rgba(0,0,0,0.04);
+            box-shadow: 0 10px 12px -5px rgba(0,0,0,0.1), 0 8px 8px -5px rgba(0,0,0,0.04);
             opacity: 0;
             pointer-events: none;
             transition: opacity 0.3s ease;
