@@ -2,7 +2,7 @@
 // @name         网页请求监视器
 // @icon         data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' width='100' height='100' style='overflow: visible'%3E%3Ctext x='50%' y='60%' font-size='60' text-anchor='middle' dominant-baseline='middle'%3E🌍%3C/text%3E%3C/svg%3E
 // @namespace    http://tampermonkey.net/
-// @version      1.1.1
+// @version      1.1.2
 // @description  Web Request Monitor
 // @author       Howie Wood
 // @match        *://*/*
@@ -203,18 +203,22 @@
             overflow-x: auto;
             overflow-y: hidden;
             scrollbar-width: thin;
-            scrollbar-color: var(--primary-color) var(--surface);
+            scrollbar-color: rgba(var(--primary-color-rgb), 0.5) var(--surface);
         }
         /* 添加横向滚动条样式 */
         .request-info::-webkit-scrollbar {
-            height: 4px;
+            height: 2px;
         }
         .request-info::-webkit-scrollbar-track {
             background: var(--surface);
         }
         .request-info::-webkit-scrollbar-thumb {
-            background: var(--primary-color);
-            border-radius: 2px;
+            background: rgba(var(--primary-color-rgb), 0.5);
+            border-radius: 1px;
+            transition: background 0.3s;
+        }
+        .request-info::-webkit-scrollbar-thumb:hover {
+            background: rgba(var(--primary-color-rgb), 0.8);
         }
         .request-type {
             display: inline-flex;
