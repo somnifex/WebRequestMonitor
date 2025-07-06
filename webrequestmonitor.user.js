@@ -9,8 +9,8 @@
 // @exclude      *://*.youtube.com/*
 // @grant        GM_addStyle
 // @grant        GM_setClipboard
-// @updateURL    https://github.com/utopeadia/WebRequestMonitor/raw/refs/heads/main/webrequestmonitor.user.js
-// @downloadURL  https://github.com/utopeadia/WebRequestMonitor/raw/refs/heads/main/webrequestmonitor.user.js
+// @updateURL    https://github.com/somnifex/WebRequestMonitor/raw/refs/heads/main/webrequestmonitor.user.js
+// @downloadURL  https://github.com/somnifex/WebRequestMonitor/raw/refs/heads/main/webrequestmonitor.user.js
 // ==/UserScript==
 
 (function () {
